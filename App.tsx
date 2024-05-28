@@ -18,7 +18,9 @@ export default function App() {
         options={{
                 title: 'Salir', 
                 headerStyle:{backgroundColor: '#a04dda'}, 
-                headerTintColor: 'white'}}
+                headerTintColor: 'white',
+                headerShadowVisible: false
+              }}
                 />
       </Stack.Navigator>
     </NavigationContainer>
