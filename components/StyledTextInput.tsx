@@ -12,7 +12,11 @@ const styles = StyleSheet.create({
     }
 });
 
-export const StyledTextInput = ({style = {}, ...props}) => {
+interface Props {
+    style? : object
+}
+
+export const StyledTextInput: React.FC<Props> = ({style = {}, ...props}) => {
 
     const inputStyle = [
         styles.textInput,

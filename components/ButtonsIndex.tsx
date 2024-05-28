@@ -1,8 +1,9 @@
+import React from "react";
 import { View, TouchableOpacity } from "react-native";
 import { Link } from "@react-navigation/native";
 import { ScaledSheet } from "react-native-size-matters";
 
-export const ButtonsIndex = () => {
+export const ButtonsIndex: React.FC = () => {
     return (
         <View style={style.containerButtons}>
             <TouchableOpacity style={style.buttonLogin}>

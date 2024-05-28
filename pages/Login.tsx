@@ -1,6 +1,7 @@
 import React from "react";
 import { View, ImageBackground,Text } from "react-native";
 import { ScaledSheet } from "react-native-size-matters";
+import { ButtonsLogin } from "../components/ButtonsLogin";
 
 const Login : React.FC = () => {
     return(
@@ -10,6 +11,7 @@ const Login : React.FC = () => {
                     <Text style={[styles.text, {fontSize: 30}]}>Hola</Text>
                     <Text style={[styles.text, {fontSize: 20}]}>Inicie sesión en su cuenta</Text>
                 </View>
+                <ButtonsLogin/>
             </ImageBackground>
         </View>
     );
