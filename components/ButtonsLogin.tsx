@@ -7,11 +7,11 @@ export const ButtonsLogin: React.FC = () => {
     return(
         <View style={styles.container}>
             <View style={styles.containerInput}>
-                <Text>Email</Text>
+                <Text>Email *</Text>
                 <StyledTextInput/>
             </View>
             <View style={styles.containerInput}>
-                <Text>Contraseña</Text>
+                <Text>Contraseña *</Text>
                 <StyledTextInput/>
             </View>
         </View>
