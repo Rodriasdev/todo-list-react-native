@@ -14,7 +14,15 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Index" component={Index} options={{headerShown:false}}/>
-        <Stack.Screen name="Login" component={Login} options={{headerShown:false}}/>
+        <Stack.Screen name="Login" component={Login} 
+        options={{
+                title: 'Salir', 
+                headerStyle:{backgroundColor: '#a04dda'}, 
+                headerTintColor: 'white',
+                headerTitleStyle: {
+                  
+                }}}
+                />
       </Stack.Navigator>
     </NavigationContainer>
   );
