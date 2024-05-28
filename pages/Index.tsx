@@ -1,17 +1,20 @@
 import React from "react";
 import {View, ImageBackground, TouchableOpacity, Text } from "react-native";
 import { ScaledSheet } from "react-native-size-matters";
+import { Link } from "@react-navigation/native";
 
 const Index: React.FC = () => {
+
+
     return(
         <View style={style.container}>
             <ImageBackground style={style.backgroundImage} source={require('../assets/wave-haikei.png')}>
                 <View style={style.containerButtons}>
                     <TouchableOpacity style={style.buttonLogin}>
-                        <Text style={style.text}>Iniciar Sesión</Text>
+                        <Link to={'/Login'} style={style.text}>Iniciar Sesión</Link>
                     </TouchableOpacity>
                     <TouchableOpacity style={style.buttonRegister}>
-                        <Text style={style.text}>Registrarse</Text>
+                        <Link to={'Register'} style={style.text}>Registrarse</Link>
                     </TouchableOpacity>
                 </View>
             </ImageBackground>
