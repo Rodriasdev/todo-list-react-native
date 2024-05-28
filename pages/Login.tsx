@@ -6,9 +6,9 @@ const Login : React.FC = () => {
     return(
         <View style={styles.container}>
             <ImageBackground source={require('../assets/blob-scene-haikei.png')} style={styles.backgroundImage}>
-                <View style={{flex: 1, marginTop: 20}}>  
-                    <Text style={styles.text}>Hola</Text>
-                    <Text style={styles.text}>Inicie sesión en su cuenta</Text>
+                <View style={{flex: 1, marginTop: 50}}>  
+                    <Text style={[styles.text, {fontSize: 30}]}>Hola</Text>
+                    <Text style={[styles.text, {fontSize: 20}]}>Inicie sesión en su cuenta</Text>
                 </View>
             </ImageBackground>
         </View>
@@ -27,7 +27,6 @@ const styles = ScaledSheet.create({
         justifyContent: 'center',
     },
     text:{
-        textAlign: 'center',
-        fontSize: 19
+        textAlign: 'center'
     }
 })
