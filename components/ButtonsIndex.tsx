@@ -3,11 +3,12 @@ import { View, TouchableOpacity } from "react-native";
 import { Link } from "@react-navigation/native";
 import { ScaledSheet } from "react-native-size-matters";
 
+
 export const ButtonsIndex: React.FC = () => {
     return (
         <View style={style.containerButtons}>
             <TouchableOpacity style={style.buttonLogin}>
-                <Link to={'/Login'} style={style.text}>Iniciar Sesión</Link>
+                <Link to={'/Login'} style={style.text}>Iniciar sesión</Link>
             </TouchableOpacity>
             <TouchableOpacity style={style.buttonRegister}>
                 <Link to={'Register'} style={style.text}>Registrarse</Link>
@@ -22,7 +23,8 @@ const style = ScaledSheet.create({
         width: '130@s',
         borderRadius: 20,
         height: '30@s',
-        marginLeft: 20
+        marginLeft: 20,
+        
     },
     buttonLogin:{
         backgroundColor: '#a04dda',
@@ -32,9 +34,8 @@ const style = ScaledSheet.create({
     },
     text: {
         textAlign: 'center',
-        fontSize: 20,
-        color: 'white',
-        marginTop: 5
+        fontSize: 19,
+        color: 'white'
     },
     containerButtons:{  
         alignSelf: 'center',
