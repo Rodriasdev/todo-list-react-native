@@ -1,7 +1,8 @@
 import React from "react";
-import { View,Text } from "react-native";
+import { View,Text,TouchableOpacity } from "react-native";
 import { StyledTextInput } from "./StyledTextInput";
 import { ScaledSheet } from "react-native-size-matters";
+import { Link } from "@react-navigation/native";
 
 export const ButtonsLogin: React.FC = () => {
     return(
@@ -14,6 +15,9 @@ export const ButtonsLogin: React.FC = () => {
                 <Text>Contraseña *</Text>
                 <StyledTextInput/>
             </View>
+            <TouchableOpacity style={styles.ButtonLogin}>
+                    <Link to={'Register'} style={styles.text}>Iniciar sesión</Link>
+            </TouchableOpacity>
         </View>
     );
 };
@@ -21,9 +25,29 @@ export const ButtonsLogin: React.FC = () => {
 const styles = ScaledSheet.create({
     container: {
         flex: 1,
-        marginTop: -100
+        marginTop: -90
     },
     containerInput: {
         marginHorizontal: 40,
+    },
+        buttonLogin:{
+        backgroundColor: '#a04dda',
+        width: '150@s',
+        borderRadius: 20,
+        height: '30@s'
+    },
+    ButtonLogin:{  
+        backgroundColor: '#a04dda',
+        width: '130@s',
+        borderRadius: 20,
+        height: '30@s',
+        marginLeft: 20,
+        alignSelf: 'center',
+        marginTop: 10
+    },
+    text:{
+        textAlign: 'center',
+        fontSize: 19,
+        color: 'white'
     }
 })
