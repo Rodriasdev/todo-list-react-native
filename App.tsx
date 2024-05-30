@@ -19,7 +19,7 @@ export default function App() {
                 title: 'Salir', 
                 headerStyle:{backgroundColor: '#a04dda'}, 
                 headerTintColor: 'white',
-                headerShadowVisible: false
+                // headerShadowVisible: false
               }}
                 />
       </Stack.Navigator>

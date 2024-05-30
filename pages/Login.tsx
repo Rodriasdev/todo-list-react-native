@@ -6,7 +6,7 @@ import { ButtonsLogin } from "../components/ButtonsLogin";
 const Login : React.FC = () => {
     return(
         <View style={styles.container}>
-            <ImageBackground source={require('../assets/blob-scene-haikei.png')} style={styles.backgroundImage}>
+            <ImageBackground source={require('../assets/blob-scene-haikei2.png')} style={styles.backgroundImage}>
                 <View style={{flex: 1, marginTop: 90}}>  
                     <Text style={[styles.text, {fontSize: 30}]}>Hola</Text>
                     <Text style={[styles.text, {fontSize: 20}]}>Inicie sesión en su cuenta</Text>
