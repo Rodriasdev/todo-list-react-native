@@ -2,6 +2,7 @@ import React from "react";
 import { Image,View, ImageBackground,Text } from "react-native";
 import { ScaledSheet } from "react-native-size-matters";
 import { ButtonsInputsForm } from "../components/ButtonsInputsForm";
+import { Link } from "@react-navigation/native";
 
 const Login : React.FC = () => {
     return(
@@ -18,6 +19,10 @@ const Login : React.FC = () => {
                         <Image style={styles.Image} source={require('../assets/logofb.png')}/>
                         <Image style={styles.Image} source={require('../assets/logoTwt.png')}/>
                     </View>
+                </View>
+                <View style={{alignSelf: 'center', flexDirection: 'row'}}>
+                    <Text>No tienes una cuenta?</Text>
+                    <Link style={{marginStart: 5}} to='/Register'>Registrarse</Link>
                 </View>
             </ImageBackground>
         </View>

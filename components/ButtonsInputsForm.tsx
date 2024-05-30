@@ -2,7 +2,6 @@ import React from "react";
 import { View,Text,TouchableOpacity } from "react-native";
 import { StyledTextInput } from "./StyledTextInput";
 import { ScaledSheet } from "react-native-size-matters";
-import { Link } from "@react-navigation/native";
 
 interface Props {
     username: boolean
@@ -23,7 +22,7 @@ const styles = ScaledSheet.create({
         marginLeft: 20,
         marginTop: 10,
         alignSelf: 'center',
-        height: '40@s'
+        // height: '40@s'
     },
     text:{
         textAlign: 'center',
@@ -54,7 +53,9 @@ export const ButtonsInputsForm: React.FC<Props> = ({username}) => {
             </View>
             <View style={{flex: 1, height: 20}}>
                 <TouchableOpacity style={styles.ButtonLogin}>
-                        <Text style={styles.text}>Iniciar sesión</Text>
+                        <Text style={styles.text}>
+                            {username == false ? 'Iniciar sesión':'Registrarse'} 
+                        </Text>
                 </TouchableOpacity>
             </View>
         </View>
