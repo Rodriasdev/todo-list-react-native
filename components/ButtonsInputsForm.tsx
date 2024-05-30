@@ -4,9 +4,20 @@ import { StyledTextInput } from "./StyledTextInput";
 import { ScaledSheet } from "react-native-size-matters";
 import { Link } from "@react-navigation/native";
 
-export const ButtonsLogin: React.FC = () => {
+interface Props {
+    name: boolean
+}
+
+export const ButtonsInputsForm: React.FC<Props> = ({name}) => {
     return(
         <View style={styles.container}>
+            {
+                name == false ? <View></View>:
+                <View style={styles.containerInput}>
+                    <Text>Nombre *</Text>
+                    <StyledTextInput/>
+                </View>
+            }
             <View style={styles.containerInput}>
                 <Text>Email *</Text>
                 <StyledTextInput/>
