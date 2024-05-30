@@ -9,7 +9,7 @@ const Register: React.FC = () => {
         <View style={styles.container}>
             <ImageBackground source={require('../assets/blob-scene-haikei2.png')} style={styles.backgroundImage}>
                 <View style={styles.componentContainer}>
-                    <ButtonsInputsForm name={true}/>
+                    <ButtonsInputsForm username={true}/>
                 </View>
             </ImageBackground>
         </View>
@@ -29,5 +29,16 @@ const styles = ScaledSheet.create({
     },
     componentContainer: {
         marginTop: -150
+    },
+    Image: {
+        width: '20@s',
+        height: '20@s',
+        marginHorizontal: 10
+    },
+    containerImages:{
+        flex: 1,
+        alignSelf: 'center',
+        flexDirection: 'row',
+        marginTop: 10
     }
 });

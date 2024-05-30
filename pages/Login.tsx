@@ -11,7 +11,7 @@ const Login : React.FC = () => {
                     <Text style={[styles.text, {fontSize: 30}]}>Hola</Text>
                     <Text style={[styles.text, {fontSize: 20}]}>Inicie sesión en su cuenta</Text>
                 </View>
-                <ButtonsInputsForm name={false}/>
+                <ButtonsInputsForm username={false}/>
                 <View style={{flex: 1}}>
                     <Text style={[styles.text, {marginTop: 10}]}>Puedes utilizar tus redes sociales</Text>
                     <View style={styles.containerImages}>

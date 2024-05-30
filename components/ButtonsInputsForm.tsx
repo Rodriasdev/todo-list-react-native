@@ -5,14 +5,40 @@ import { ScaledSheet } from "react-native-size-matters";
 import { Link } from "@react-navigation/native";
 
 interface Props {
-    name: boolean
+    username: boolean
 }
 
-export const ButtonsInputsForm: React.FC<Props> = ({name}) => {
+const styles = ScaledSheet.create({
+    container: {
+        flex: 1,
+        marginTop: -90
+    },
+    containerInput: {
+        marginHorizontal: 40,
+    },
+    ButtonLogin:{
+        backgroundColor: '#a04dda',
+        width: '130@s',
+        borderRadius: 20,
+        marginLeft: 20,
+        marginTop: 10,
+        alignSelf: 'center',
+        height: '40@s'
+    },
+    text:{
+        textAlign: 'center',
+        fontSize: 19,
+        color: 'white',
+        padding: 10,
+        textAlignVertical: 'center'
+    }
+})
+
+export const ButtonsInputsForm: React.FC<Props> = ({username}) => {
     return(
         <View style={styles.container}>
             {
-                name == false ? <View></View>:
+                username == false ? <View></View>:
                 <View style={styles.containerInput}>
                     <Text>Nombre *</Text>
                     <StyledTextInput/>
@@ -27,40 +53,11 @@ export const ButtonsInputsForm: React.FC<Props> = ({name}) => {
                 <StyledTextInput/>
             </View>
             <View style={{flex: 1, height: 20}}>
-            <TouchableOpacity style={styles.ButtonLogin}>
-                    <Link to={'Register'} style={styles.text}>Iniciar sesión</Link>
-            </TouchableOpacity>
+                <TouchableOpacity style={styles.ButtonLogin}>
+                        <Text style={styles.text}>Iniciar sesión</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );
 };
 
-const styles = ScaledSheet.create({
-    container: {
-        flex: 1,
-        marginTop: -90
-    },
-    containerInput: {
-        marginHorizontal: 40,
-    },
-        buttonLogin:{
-        backgroundColor: '#a04dda',
-        width: '150@s',
-        borderRadius: 20,
-        height: '30@s'
-    },
-    ButtonLogin:{  
-        backgroundColor: '#a04dda',
-        width: '130@s',
-        borderRadius: 20,
-        marginLeft: 20,
-        marginTop: 10,
-        alignSelf: 'center'
-    },
-    text:{
-        textAlign: 'center',
-        fontSize: 19,
-        color: 'white',
-        padding: 10
-    }
-})
