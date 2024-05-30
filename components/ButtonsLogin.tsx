@@ -15,9 +15,11 @@ export const ButtonsLogin: React.FC = () => {
                 <Text>Contraseña *</Text>
                 <StyledTextInput/>
             </View>
+            <View style={{flex: 1, height: 20}}>
             <TouchableOpacity style={styles.ButtonLogin}>
                     <Link to={'Register'} style={styles.text}>Iniciar sesión</Link>
             </TouchableOpacity>
+            </View>
         </View>
     );
 };
@@ -40,14 +42,14 @@ const styles = ScaledSheet.create({
         backgroundColor: '#a04dda',
         width: '130@s',
         borderRadius: 20,
-        height: '30@s',
         marginLeft: 20,
-        alignSelf: 'center',
-        marginTop: 10
+        marginTop: 10,
+        alignSelf: 'center'
     },
     text:{
         textAlign: 'center',
         fontSize: 19,
-        color: 'white'
+        color: 'white',
+        padding: 10
     }
 })

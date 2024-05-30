@@ -20,17 +20,20 @@ export const ButtonsIndex: React.FC = () => {
 const style = ScaledSheet.create({
     buttonRegister:{
         backgroundColor: '#a04dda',
-        width: '130@s',
         borderRadius: 20,
         height: '30@s',
         marginLeft: 20,
-        
+        flex: 1,
+        justifyContent: 'center',
+        marginRight: 20
     },
     buttonLogin:{
         backgroundColor: '#a04dda',
-        width: '150@s',
         borderRadius: 20,
-        height: '30@s'
+        height: '30@s',
+        flex: 1,
+        justifyContent: 'center',
+        marginLeft: 20,
     },
     text: {
         textAlign: 'center',
