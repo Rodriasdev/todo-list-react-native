@@ -21,7 +21,7 @@ export const ButtonsLogin: React.FC = () => {
 const styles = ScaledSheet.create({
     container: {
         flex: 1,
-        marginTop: -250
+        marginTop: -100
     },
     containerInput: {
         marginHorizontal: 40,
