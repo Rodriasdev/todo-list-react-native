@@ -3,7 +3,6 @@ import { Image,View, ImageBackground,Text } from "react-native";
 import { ScaledSheet } from "react-native-size-matters";
 import { ButtonsLogin } from "../components/ButtonsLogin";
 
-
 const Login : React.FC = () => {
     return(
         <View style={styles.container}>

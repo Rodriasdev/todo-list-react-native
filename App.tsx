@@ -2,6 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from "./pages/Login";
 import Index from "./pages/Index";
+import Register from "./pages/Register";
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,14 @@ export default function App() {
                 // headerShadowVisible: false
               }}
                 />
+        <Stack.Screen name="Register" component={Register} 
+        options={{
+          title: 'Salir', 
+          headerStyle:{backgroundColor: '#a04dda'}, 
+          headerTintColor: 'white',
+          // headerShadowVisible: false
+                }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

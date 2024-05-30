@@ -11,7 +11,7 @@ export const ButtonsIndex: React.FC = () => {
                 <Link to={'/Login'} style={style.text}>Iniciar sesión</Link>
             </TouchableOpacity>
             <TouchableOpacity style={style.buttonRegister}>
-                <Link to={'Register'} style={style.text}>Registrarse</Link>
+                <Link to={'/Register'} style={style.text}>Registrarse</Link>
             </TouchableOpacity>
         </View>
     )
