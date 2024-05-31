@@ -2,7 +2,7 @@ import React from "react";
 import { View,Text } from "react-native";
 import { StyledTextInput } from "./StyledTextInput";
 import { ScaledSheet } from "react-native-size-matters";
-import { SubmitForm } from "./submits/submitForm";
+import { SubmitForm } from "./submits/SubmitForm";
 
 interface Props {
     username: boolean
