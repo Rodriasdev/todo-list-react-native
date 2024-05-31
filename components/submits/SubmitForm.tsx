@@ -6,6 +6,7 @@ interface Props{
     username: boolean
 }
 
+
 export const SubmitForm : React.FC<Props> = ({username}) => {
     return(
             <View style={{flex: 1, height: 20}}>
