@@ -34,7 +34,7 @@ export const ButtonsInputsForm: React.FC<Props> = ({username}) => {
                             <Text>Contraseña *</Text>
                             <StyledTextInput/>
                         </View>
-                        <View style={{flex: 1, height: 20}}>
+                        <View>
                             <TouchableOpacity style={styles.ButtonLogin} onPress={() => handleSubmit}>
                                 <Text style={styles.text}>
                                     {username == false ? 'Iniciar sesión':'Registrarse'} 
@@ -53,17 +53,16 @@ export const ButtonsInputsForm: React.FC<Props> = ({username}) => {
 const styles = ScaledSheet.create({
     container: {
         flex: 1,
-        marginTop: -90
+        marginTop: '-65@s'
     },
     containerInput: {
-        marginHorizontal: 40,
+        marginHorizontal: '40@s',
     },
     ButtonLogin:{
         backgroundColor: '#a04dda',
-        width: '130@s',
-        borderRadius: 20,
-        marginLeft: 20,
-        marginTop: 10,
+        width: '150@s',
+        borderRadius: '20@s',
+        marginLeft: '20@s',
         alignSelf: 'center',
     },
     text:{

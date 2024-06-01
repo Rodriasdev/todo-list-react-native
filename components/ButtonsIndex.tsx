@@ -37,7 +37,7 @@ const style = ScaledSheet.create({
     },
     text: {
         textAlign: 'center',
-        fontSize: 19,
+        fontSize: '19@s',
         color: 'white'
     },
     containerButtons:{  
