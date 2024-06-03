@@ -3,6 +3,8 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { StyledTextInput } from "./StyledTextInput";
 import { ScaledSheet } from "react-native-size-matters";
 import { Formik } from "formik";
+import users from "../data/users.json";
+import { createUser, findUser } from "../types/user.dto";
 
 interface Props {
     username: boolean
@@ -14,10 +16,19 @@ const initialState = {
     password: ''
 }
 
+const registerUser = (data:createUser) => {
+    users.push(JSON.parse(JSON.stringify(data)));
+};
+
+const loginUser = (data:findUser) => {
+    const user = users.find(user => user.email == data.email);
+    console.log(user);
+};
+
 export const ButtonsInputsForm: React.FC<Props> = ({ username }) => {
     return (
-        <Formik initialValues={initialState} onSubmit={values => console.log(values)}>
-            {({ handleSubmit, handleChange, values, handleBlur }) => (
+        <Formik initialValues={initialState} onSubmit={values => username == true?registerUser(values):loginUser(values)}>
+            {({ handleSubmit }) => (
                 <View style={styles.container}>
                     {
                         username && (
