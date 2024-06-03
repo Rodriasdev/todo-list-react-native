@@ -5,6 +5,7 @@ import { ScaledSheet } from "react-native-size-matters";
 import { Formik } from "formik";
 import users from "../data/users.json";
 import { createUser, findUser } from "../types/user.dto";
+import { loginValidationSchema, registerValidationSchema } from "../validatorSchemas/user";
 
 interface Props {
     username: boolean
@@ -16,28 +17,32 @@ const initialState = {
     password: ''
 }
 
-const registerUser = (data:createUser) => {
+const registerUser = (data: createUser) => {
     users.push(JSON.parse(JSON.stringify(data)));
 };
 
-const loginUser = (data:findUser) => {
-    const user = users.find(user => user.email == data.email);
+const loginUser = (data: findUser) => {
+    const user = users.find(user => user.email === data.email);
     console.log(user);
 };
 
 export const ButtonsInputsForm: React.FC<Props> = ({ username }) => {
     return (
-        <Formik initialValues={initialState} onSubmit={values => username == true?registerUser(values):loginUser(values)}>
+        <Formik
+            validationSchema={username ? registerValidationSchema : loginValidationSchema}
+            initialValues={initialState}
+            onSubmit={values => console.log(values)
+            }
+            // onSubmit={values => username ? registerUser(values) : loginUser(values)}
+        >
             {({ handleSubmit }) => (
                 <View style={styles.container}>
-                    {
-                        username && (
-                            <View style={styles.containerInput}>
-                                <Text>Nombre *</Text>
-                                <StyledTextInput name="name" />
-                            </View>
-                        )
-                    }
+                    {username && (
+                        <View style={styles.containerInput}>
+                            <Text>Nombre *</Text>
+                            <StyledTextInput name="name" />
+                        </View>
+                    )}
                     <View style={styles.containerInput}>
                         <Text>Email *</Text>
                         <StyledTextInput name="email" />
