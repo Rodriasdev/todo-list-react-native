@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { Image,View, ImageBackground,Text } from "react-native";
-import { ScaledSheet } from "react-native-size-matters";
+import { ScaledSheet, scale } from "react-native-size-matters";
 import { ButtonsInputsForm } from "../../components/ButtonsInputsForm";
 import { Link } from "@react-navigation/native";
 import { Platform } from "react-native";
@@ -21,7 +21,7 @@ const Login : React.FC = () => {
         <View style={styles.container}>
             <ImageBackground source={bgSource} 
             style={Platform.OS === "web" ? styles.webBackgroundImage : styles.backgroundImage}>
-                <View style={{flex: 1, marginTop: 90}}>  
+                <View style={styles.title}>  
                     <Text style={[styles.text, {fontSize: 30}]}>Hola</Text>
                     <Text style={[styles.text, {fontSize: 20}]}>Inicie sesión en su cuenta</Text>
                 </View>
@@ -80,11 +80,14 @@ const styles = ScaledSheet.create({
         flex: 1,
         ...Platform.select({
             web: {
-                marginTop: "80@s"
+                marginTop: scale(60)
             },
             android: {
-                marginTop: "50@s"
+                marginTop: scale(30)
             }
         })
+    },
+    title: {
+        marginTop: Platform.OS == "web" ? scale(40): scale(100)
     }
 });

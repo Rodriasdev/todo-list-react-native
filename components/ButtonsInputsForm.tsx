@@ -75,7 +75,7 @@ const styles = ScaledSheet.create({
         flex: 1,
         justifyContent: 'center',
         paddingHorizontal: scale(10),
-        marginTop: Platform.OS === 'web' ? scale(20) : scale(20),
+        marginTop: Platform.OS === 'web' ? scale(80) : scale(50),
     },
     containerInput: {
         marginVertical: scale(10),
@@ -85,13 +85,13 @@ const styles = ScaledSheet.create({
         backgroundColor: '#a04dda',
         borderRadius: scale(20),
         alignSelf: 'center',
-        marginTop: scale(20),
+        marginTop: scale(15),
         paddingHorizontal: scale(10),
     },
     text: {
         textAlign: 'center',
         color: 'white',
-        fontSize: scale(19),
+        fontSize: Platform.OS === 'web' ? scale(10) : scale(20),
         paddingVertical: scale(10),
     },
 });
