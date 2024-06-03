@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Platform } from "react-native";
 import { StyledTextInput } from "./StyledTextInput";
-import { ScaledSheet } from "react-native-size-matters";
+import { ScaledSheet, scale } from "react-native-size-matters";
 import { Formik } from "formik";
 import users from "../data/users.json";
 import { createUser, findUser } from "../types/user.dto";
@@ -12,9 +12,6 @@ import { NavigationProp } from "../types/navigate";
 interface Props {
     username: boolean
 }
-
-
-
 
 export const ButtonsInputsForm: React.FC<Props> = ({ username }) => {
 
@@ -38,7 +35,6 @@ export const ButtonsInputsForm: React.FC<Props> = ({ username }) => {
         password: ''
     }
     
-
     return (
         <Formik
             validationSchema={username ? registerValidationSchema : loginValidationSchema}
@@ -62,7 +58,7 @@ export const ButtonsInputsForm: React.FC<Props> = ({ username }) => {
                         <StyledTextInput secureTextEntry={true} name="password" />
                     </View>
                     <View>
-                        <TouchableOpacity style={styles.Button} onPress={() => handleSubmit()}>
+                        <TouchableOpacity style={styles.button} onPress={() => handleSubmit()}>
                             <Text style={styles.text}>
                                 {username ? 'Registrarse' : 'Iniciar sesión'}
                             </Text>
@@ -77,24 +73,25 @@ export const ButtonsInputsForm: React.FC<Props> = ({ username }) => {
 const styles = ScaledSheet.create({
     container: {
         flex: 1,
-        marginTop: '-65@s'
+        justifyContent: 'center',
+        paddingHorizontal: scale(10),
+        marginTop: Platform.OS === 'web' ? scale(20) : scale(20),
     },
     containerInput: {
-        marginHorizontal: '40@s',
+        marginVertical: scale(10),
+        marginHorizontal: Platform.OS === 'web' ? '30%' : scale(40),
     },
-    Button: {
+    button: {
         backgroundColor: '#a04dda',
-        width: '150@s',
-        borderRadius: '20@s',
-        marginLeft: '20@s',
+        borderRadius: scale(20),
         alignSelf: 'center',
-        marginTop: '50@s'
+        marginTop: scale(20),
+        paddingHorizontal: scale(10),
     },
     text: {
         textAlign: 'center',
-        fontSize: '19@s',
         color: 'white',
-        padding: 10,
-        textAlignVertical: 'center'
-    }
+        fontSize: scale(19),
+        paddingVertical: scale(10),
+    },
 });

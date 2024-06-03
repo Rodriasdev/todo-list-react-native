@@ -1,5 +1,5 @@
 import React from "react";
-import { TextInput, StyleSheet,Text } from "react-native";
+import { TextInput, StyleSheet,Text,View } from "react-native";
 import { useField } from "formik";
 
 const styles = StyleSheet.create({
@@ -21,13 +21,15 @@ interface Props {
 export const StyledTextInput: React.FC<Props> = ({ style = {}, name, ...props }) => {
     const [field, meta] = useField(name);
 
+
     const inputStyle = [
         styles.textInput,
         style
     ];
 
+
     return (
-       <>
+        <View >
             <TextInput
             style={inputStyle}
             onChangeText={field.onChange(name)}
@@ -36,6 +38,6 @@ export const StyledTextInput: React.FC<Props> = ({ style = {}, name, ...props })
             {...props}
             />
             {meta.error && <Text style={{color: 'red'}}>{meta.error}</Text>}
-       </> 
+        </View>
     );
 };

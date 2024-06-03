@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity, Platform } from "react-native";
 import { Link } from "@react-navigation/native";
 import { ScaledSheet } from "react-native-size-matters";
 
@@ -23,17 +23,31 @@ const style = ScaledSheet.create({
         borderRadius: 20,
         height: '30@s',
         marginLeft: 20,
-        flex: 1,
         justifyContent: 'center',
-        marginRight: 20
+        marginRight: 20,
+        ...Platform.select({
+            android: {
+                flex: 1,
+            },
+            web: {
+                padding: 10,
+            }
+        })
     },
     buttonLogin:{
         backgroundColor: '#a04dda',
         borderRadius: 20,
         height: '30@s',
-        flex: 1,
         justifyContent: 'center',
         marginLeft: 20,
+        ...Platform.select({
+            android: {
+                flex: 1,
+            },
+            web: {
+                padding: 10,
+            }
+        })
     },
     text: {
         textAlign: 'center',
