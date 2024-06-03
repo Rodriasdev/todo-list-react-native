@@ -7,6 +7,7 @@ import users from "../data/users.json";
 import { createUser, findUser } from "../types/user.dto";
 import { loginValidationSchema, registerValidationSchema } from "../validatorSchemas/user";
 import { useNavigation } from "@react-navigation/native";
+import { NavigationProp } from "../types/navigate";
 
 interface Props {
     username: boolean
@@ -17,15 +18,18 @@ interface Props {
 
 export const ButtonsInputsForm: React.FC<Props> = ({ username }) => {
 
-    const navigate = useNavigation()
+    const navigate = useNavigation<NavigationProp>()
 
     const registerUser = (data: createUser) => {
         users.push(JSON.parse(JSON.stringify(data)));
+        return navigate.navigate("Tasks");
     };
     
     const loginUser = (data: findUser) => {
         const user = users.find(user => user.email === data.email);
-        console.log(user);
+        if (!user) return
+
+        return navigate.navigate("Tasks");
     };
 
     const initialState = {
