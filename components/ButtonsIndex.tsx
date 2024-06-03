@@ -8,10 +8,10 @@ export const ButtonsIndex: React.FC = () => {
     return (
         <View style={style.containerButtons}>
             <TouchableOpacity style={style.buttonLogin}>
-                <Link to={'/login'} style={style.text}>Iniciar sesión</Link>
+                <Link to={'/Login'} style={style.text}>Iniciar sesión</Link>
             </TouchableOpacity>
             <TouchableOpacity style={style.buttonRegister}>
-                <Link to={'/register'} style={style.text}>Registrarse</Link>
+                <Link to={'/Register'} style={style.text}>Registrarse</Link>
             </TouchableOpacity>
         </View>
     )

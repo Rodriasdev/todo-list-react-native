@@ -26,20 +26,21 @@ export default function RootLayout() {
 
       <Stack initialRouteName='index'>
         <Stack.Screen name="index" options={{headerShown:false}}/>
-        <Stack.Screen name="register"
+        <Stack.Screen name="Register"
                       options={{
                       title: 'Salir', 
                       headerStyle:{backgroundColor: '#a04dda'}, 
                       headerTintColor: 'white',
                       // headerShadowVisible: false
                       }}/>
-        <Stack.Screen name="login"
+        <Stack.Screen name="Login"
                       options={{
                       title: 'Salir', 
                       headerStyle:{backgroundColor: '#a04dda'}, 
                       headerTintColor: 'white',
                       // headerShadowVisible: false
                       }}/>
+        <Stack.Screen name="Tasks"/>
       </Stack>
 
   );

@@ -22,14 +22,14 @@ export const ButtonsInputsForm: React.FC<Props> = ({ username }) => {
 
     const registerUser = (data: createUser) => {
         users.push(JSON.parse(JSON.stringify(data)));
-        return navigate.navigate("tasks");
+        return navigate.navigate("Tasks");
     };
     
     const loginUser = (data: findUser) => {
         const user = users.find(user => user.email === data.email);
         if (!user) return
 
-        return navigate.navigate("tasks");
+        return navigate.navigate("Tasks");
     };
 
     const initialState = {
