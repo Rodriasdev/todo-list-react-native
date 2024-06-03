@@ -2,13 +2,13 @@ import React from "react";
 import { View, Text } from "react-native";
 import { ScaledSheet } from "react-native-size-matters";
 import { ImageBackground } from "react-native";
-import { ButtonsInputsForm } from "../components/ButtonsInputsForm";
+import { ButtonsInputsForm } from "../../components/ButtonsInputsForm";
 import { Link } from "@react-navigation/native";
 
 const Register: React.FC = () => {
     return(
         <View style={styles.container}>
-            <ImageBackground source={require('../assets/blob-scene-haikei2.png')} style={styles.backgroundImage}>
+            <ImageBackground source={require('../../assets/images/blob-scene-haikei2.png')} style={styles.backgroundImage}>
                 <Text style={styles.text}>Crear tu cuenta</Text>
                 <View style={styles.componentContainer}>  
                         <ButtonsInputsForm username={true}/>

@@ -7,11 +7,11 @@ export const loginValidationSchema = yup.object().shape({
         .required('El correo electrónico es requerido'),
     password: yup
         .string()
-        .min(5, 'La contraseña debe tener al menos 5 caracteres')
-        .matches(/[A-Z]/, 'La contraseña debe contener al menos una letra mayúscula')
-        .matches(/[a-z]/, 'La contraseña debe contener al menos una letra minúscula')
-        .matches(/[@$!%*?&]/, 'La contraseña debe contener al menos un símbolo')
-        .required('La contraseña es requerida')
+        // .min(5, 'La contraseña debe tener al menos 5 caracteres')
+        // .matches(/[A-Z]/, 'La contraseña debe contener al menos una letra mayúscula')
+        // .matches(/[a-z]/, 'La contraseña debe contener al menos una letra minúscula')
+        // .matches(/[@$!%*?&]/, 'La contraseña debe contener al menos un símbolo')
+        // .required('La contraseña es requerida')
 });
 
 export const registerValidationSchema = yup.object().shape({

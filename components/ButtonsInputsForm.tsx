@@ -22,14 +22,14 @@ export const ButtonsInputsForm: React.FC<Props> = ({ username }) => {
 
     const registerUser = (data: createUser) => {
         users.push(JSON.parse(JSON.stringify(data)));
-        return navigate.navigate("Tasks");
+        return navigate.navigate("tasks");
     };
     
     const loginUser = (data: findUser) => {
         const user = users.find(user => user.email === data.email);
         if (!user) return
 
-        return navigate.navigate("Tasks");
+        return navigate.navigate("tasks");
     };
 
     const initialState = {
@@ -88,6 +88,7 @@ const styles = ScaledSheet.create({
         borderRadius: '20@s',
         marginLeft: '20@s',
         alignSelf: 'center',
+        marginTop: '50@s'
     },
     text: {
         textAlign: 'center',
