@@ -1,5 +1,6 @@
 import React from "react";
 import { TextInput, StyleSheet } from "react-native";
+import { useField } from "formik";
 
 const styles = StyleSheet.create({
     textInput: {
@@ -11,17 +12,26 @@ const styles = StyleSheet.create({
 });
 
 interface Props {
-    style? : object
+    style?: object,
+    name: string,
+    secureTextEntry?: boolean
 }
 
-export const StyledTextInput: React.FC<Props> = ({style = {}, ...props}) => {
+export const StyledTextInput: React.FC<Props> = ({ style = {}, name, ...props }) => {
+    const [field, meta] = useField(name);
 
     const inputStyle = [
         styles.textInput,
         style
-    ]
+    ];
 
     return (
-        <TextInput style={inputStyle} {...props}/>
-    )
-}
+        <TextInput
+            style={inputStyle}
+            onChangeText={field.onChange(name)}
+            onBlur={field.onBlur(name)}
+            value={field.value}
+            {...props}
+        />
+    );
+};
