@@ -6,34 +6,40 @@ import { Formik } from "formik";
 import users from "../data/users.json";
 import { createUser, findUser } from "../types/user.dto";
 import { loginValidationSchema, registerValidationSchema } from "../validatorSchemas/user";
+import { useNavigation } from "@react-navigation/native";
 
 interface Props {
     username: boolean
 }
 
-const initialState = {
-    name: '',
-    email: '',
-    password: ''
-}
 
-const registerUser = (data: createUser) => {
-    users.push(JSON.parse(JSON.stringify(data)));
-};
 
-const loginUser = (data: findUser) => {
-    const user = users.find(user => user.email === data.email);
-    console.log(user);
-};
 
 export const ButtonsInputsForm: React.FC<Props> = ({ username }) => {
+
+    const navigate = useNavigation()
+
+    const registerUser = (data: createUser) => {
+        users.push(JSON.parse(JSON.stringify(data)));
+    };
+    
+    const loginUser = (data: findUser) => {
+        const user = users.find(user => user.email === data.email);
+        console.log(user);
+    };
+
+    const initialState = {
+        name: '',
+        email: '',
+        password: ''
+    }
+    
+
     return (
         <Formik
             validationSchema={username ? registerValidationSchema : loginValidationSchema}
             initialValues={initialState}
-            onSubmit={values => console.log(values)
-            }
-            // onSubmit={values => username ? registerUser(values) : loginUser(values)}
+            onSubmit={values => username ? registerUser(values) : loginUser(values)}
         >
             {({ handleSubmit }) => (
                 <View style={styles.container}>
@@ -52,7 +58,7 @@ export const ButtonsInputsForm: React.FC<Props> = ({ username }) => {
                         <StyledTextInput secureTextEntry={true} name="password" />
                     </View>
                     <View>
-                        <TouchableOpacity style={styles.ButtonLogin} onPress={() => handleSubmit()}>
+                        <TouchableOpacity style={styles.Button} onPress={() => handleSubmit()}>
                             <Text style={styles.text}>
                                 {username ? 'Registrarse' : 'Iniciar sesión'}
                             </Text>
@@ -72,7 +78,7 @@ const styles = ScaledSheet.create({
     containerInput: {
         marginHorizontal: '40@s',
     },
-    ButtonLogin: {
+    Button: {
         backgroundColor: '#a04dda',
         width: '150@s',
         borderRadius: '20@s',

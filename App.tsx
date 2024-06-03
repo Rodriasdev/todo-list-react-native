@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from "./pages/Login";
 import Index from "./pages/Index";
 import Register from "./pages/Register";
+import Tasks from "./pages/Tasks";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,7 @@ export default function App() {
           // headerShadowVisible: false
                 }}
         />
+        <Stack.Screen name="Tasks" component={Tasks}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

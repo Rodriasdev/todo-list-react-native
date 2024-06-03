@@ -13,7 +13,7 @@ const Login : React.FC = () => {
                     <Text style={[styles.text, {fontSize: 20}]}>Inicie sesión en su cuenta</Text>
                 </View>
                 <ButtonsInputsForm username={false}/>
-                <View style={{flex: 1, marginTop: 50}}>
+                <View style={{flex: 1, marginTop: 100}}>
                     <Text style={[styles.text, {marginTop: 10}]}>Puedes utilizar tus redes sociales</Text>
                     <View style={styles.containerImages}>
                         <Image style={styles.Image} source={require('../assets/logofb.png')}/>
