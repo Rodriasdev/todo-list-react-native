@@ -1,29 +1,34 @@
 [
     {
+      "id": 1,
       "title": "Desarrollo de la página de inicio",
       "description": "Crear y diseñar la página de inicio del sitio web.",
       "author": "Juan Pérez",
       "date": "2024-06-01"
     },
     {
+      "id": 2,
       "title": "Configuración del servidor",
       "description": "Instalar y configurar el servidor para el entorno de producción.",
       "author": "María García",
       "date": "2024-06-02"
     },
-    {
+    { 
+      "id": 3,
       "title": "Implementación de la autenticación",
       "description": "Desarrollar el sistema de autenticación de usuarios.",
       "author": "Carlos López",
       "date": "2024-06-03"
     },
     {
+      "id": 4,
       "title": "Pruebas de integración",
       "description": "Realizar pruebas de integración de los módulos desarrollados.",
       "author": "Ana Fernández",
       "date": "2024-06-04"
     },
     {
+      "id": 5,
       "title": "Documentación del proyecto",
       "description": "Escribir la documentación del proyecto para los desarrolladores.",
       "author": "Pedro Martínez",
