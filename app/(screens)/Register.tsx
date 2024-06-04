@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from "react";
 import { View, Text } from "react-native";
-import { ScaledSheet } from "react-native-size-matters";
+import { ScaledSheet, scale } from "react-native-size-matters";
 import { ImageBackground } from "react-native";
 import { ButtonsInputsForm } from "../../components/ButtonsInputsForm";
 import { Link } from "@react-navigation/native";
@@ -22,7 +22,6 @@ const Register: React.FC = () => {
         <View style={styles.container}>
             <ImageBackground source={bgSource} 
             style={Platform.OS === "web" ? styles.webBackgroundImage : styles.backgroundImage}>
-                
                 <Text style={styles.text}>Crear tu cuenta</Text>
                 <View style={styles.componentContainer}>  
                         <ButtonsInputsForm username={true}/>
@@ -48,8 +47,8 @@ const styles = ScaledSheet.create({
         justifyContent: 'center',
     },
     componentContainer: {
-        marginTop: -250,
-        flex: 1
+        marginTop: Platform.OS == "web"? scale(-409): scale(-700),
+        flex: 1,
     },
     Image: {
         width: '20@s',
@@ -65,8 +64,8 @@ const styles = ScaledSheet.create({
     text: {
         flex: 1, 
         textAlign: 'center', 
-        marginTop: 90,
-        fontSize: 19
+        marginTop: Platform.OS == "web"? scale(30) : scale(100),
+        fontSize: scale(15)
     },
     webBackgroundImage: {
         flex: 1,
