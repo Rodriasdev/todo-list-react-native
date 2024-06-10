@@ -41,6 +41,8 @@ export default function RootLayout() {
                       // headerShadowVisible: false
                       }}/>
         <Stack.Screen name="Tasks"/>
+        <Stack.Screen name='ViewTask'/>
+        <Stack.Screen name='AddTask'/>
       </Stack>
 
   );
