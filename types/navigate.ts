@@ -6,7 +6,9 @@ export type RootStackParamList = {
     Register: undefined;
     Tasks: undefined;
     ViewTask: { task: findTasks };
-    AddTask: undefined
+    AddTask: undefined;
+    EditTask: {task: findTasks};
+    Setting: undefined
 };
 
 export type NavigationProp = NativeStackNavigationProp<RootStackParamList>;

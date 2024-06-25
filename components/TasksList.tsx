@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, View, Text, TouchableOpacity, Platform } from 'react-native';
+import { FlatList, View, Text, TouchableOpacity, Platform, Button } from 'react-native';
 import { findTasks } from '../types/tasks.dto';
 import { ScaledSheet, scale } from 'react-native-size-matters';
 import { useNavigation } from 'expo-router';
@@ -27,6 +27,7 @@ export const TaskList: React.FC<Props> = ({ tasks }) => {
             <Text>{item.author}</Text>
             <Text>{item.description}</Text>
             <Text>{item.date}</Text>
+            <Button title='Editar' onPress={() => navigate.navigate("EditTask", {task: item})}/>
           </View>
         </TouchableOpacity>
       )}

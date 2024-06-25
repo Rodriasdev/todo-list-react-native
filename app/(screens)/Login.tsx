@@ -30,7 +30,7 @@ const Login : React.FC = () => {
                     <Text style={[styles.text, {marginTop: 10}]}>Puedes utilizar tus redes sociales</Text>
                     <View style={styles.containerImages}>
                         <Image style={styles.Image} source={require('../../assets/images/logofb.png')}/>
-                        <Image style={[styles.Image, {marginTop: 5}]} source={require('../../assets/images/logoTwt.png')}/>
+                        {/* <Image style={[styles.Image, {marginTop: 5}]} source={require('../../assets/images/logoTwt.png')}/> */}
                     </View>
                 </View>
                 <View style={{alignSelf: 'center', flexDirection: 'row'}}>

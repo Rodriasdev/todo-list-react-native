@@ -15,10 +15,12 @@ const Tasks: React.FC = () => {
             <TouchableOpacity onPress={()=> navigate.navigate("AddTask")} style={styles.addTask}>
                 <Text style={styles.text}>Agregar tarea</Text>
             </TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigate.navigate("Setting")} style={styles.addTask}>
+                <Text style={styles.text}>Configuración</Text>
+            </TouchableOpacity>
             <View>
                 <TaskList tasks={tasks}/>
             </View>
-            
         </View>
     );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Platform } from "react-native";
 import { StyledTextInput } from "./StyledTextInput";
 import { ScaledSheet, scale } from "react-native-size-matters";
@@ -14,7 +14,7 @@ interface Props {
 }
 
 export const ButtonsInputsForm: React.FC<Props> = ({ username }) => {
-
+    const [authState, setAuthState] = useState<string>("")
     const navigate = useNavigation<NavigationProp>()
 
     const registerUser = (data: createUser) => {
@@ -24,7 +24,17 @@ export const ButtonsInputsForm: React.FC<Props> = ({ username }) => {
     
     const loginUser = (data: findUser) => {
         const user = users.find(user => user.email === data.email);
-        if (!user) return
+        if (!user) {
+            return setAuthState("El email no existe")
+        }else {
+            setAuthState("")
+        }
+
+        if(user.password !== data.password){
+            return setAuthState("La contraseña es incorrecta")
+        }else{
+            setAuthState("")
+        }
 
         return navigate.navigate("Tasks");
     };
@@ -56,6 +66,7 @@ export const ButtonsInputsForm: React.FC<Props> = ({ username }) => {
                     <View style={styles.containerInput}>
                         <Text>Contraseña *</Text>
                         <StyledTextInput secureTextEntry={true} name="password" />
+                        <Text style={{color:"red"}}>{authState}</Text>
                     </View>
                     <View>
                         <TouchableOpacity style={styles.button} onPress={() => handleSubmit()}>
